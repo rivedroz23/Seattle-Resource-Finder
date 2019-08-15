@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import Meals from './Meals'
 import {
     BrowserRouter as Router,
     Route,
@@ -9,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 
-class App2 extends React.Component {
+class Meals extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -40,16 +39,27 @@ class App2 extends React.Component {
 
 render() {
     return (
-        <>
-            
-        </>
-    );
-
+       <div className='App'>
+        <h1>Here are all the meals in Seattle</h1>
+        {this.props.meals && this.props.meals.map((meal, i) => (
+        <div className="meals">
+        <div> {meal.meal_served} </div>
+        <div> {meal.day_time} </div>
+        <div> {meal.location} </div>
+        <div> {meal.people_served} </div>
+        <div> {meal.name_of_program} </div>
+                    
+        </div>
+        )
+        )
+    }
+        </div>
+        
+    ); 
 }
 
 }
 
 
 
-export default App2
-
+export default Meals

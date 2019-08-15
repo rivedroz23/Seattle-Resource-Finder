@@ -1,11 +1,12 @@
 const mongoose = require('mongoose')
 
 const mealSchema = new mongoose.Schema({
+    user: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     day_time: Text,
-    meal_served: String,
-    people_served: String,
+    meal_served: Text,
+    people_served: Text,
     location: Text,
-    name_of_program: String
+    name_of_program: Text
     
   });
 

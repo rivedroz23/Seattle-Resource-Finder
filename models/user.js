@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
         required: [true, 'You must enter a email'],
         minlength: [5, 'Email must be between 5 and 99 characters'],
         maxlength: [128, 'Email must be between 5 and 99 characters']
+    },
+
+    meal: {
+        type: String
     }
 });
 

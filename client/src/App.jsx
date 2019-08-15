@@ -2,7 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import Login from './Login'
 import Signup from './Signup'
-import css from './App.css'
+import App2 from './App2'
+import Meals from './Meals'
+import './App.css'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
 
 
 class App extends React.Component {
@@ -12,7 +20,8 @@ class App extends React.Component {
       token: '',
       user: null,
       errorMessage: '',
-      apiDate: null
+      apiDate: null,
+      meals: []
     }
     this.checkForLocalToken = this.checkForLocalToken.bind(this);
     this.liftToken = this.liftToken.bind(this);
@@ -45,7 +54,7 @@ class App extends React.Component {
               token: res.data.token,
               user: res.data.user,
               errorMessage: ''
-            })
+            }, this.displayAllMeals)
           }
         })
     }
@@ -69,8 +78,34 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.checkForLocalToken()
+    this.checkForLocalToken();
+    console.log("trying to display meals")
+    let config = {
+        headers: {
+            "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
+        }
+    }
+    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json', config).then( result => {
+    this.setState({
+    meals: result.data
+          })
+        })
   }
+
+  displayAllMeals(e) {
+    console.log("trying to display meals")
+    let config = {
+        headers: {
+            "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
+        }
+    }
+    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json', config).then( result => {
+    this.setState({
+    meals: result.data
+          })
+        })
+      }
+    
 
   render() {
     var user = this.state.user
@@ -80,19 +115,31 @@ class App extends React.Component {
         <>
           <p>Hello, {user.name}</p>
           <p onClick={this.logout}>Logout</p>
+          <App2 meals={this.state.meals}/>
         </>
       )
     } else {
       contents = (
         <>
           <p>PLease signup or login</p>
+
           <Login liftToken={this.liftToken} />
           <Signup liftToken={this.liftToken} />
         </>
       );
     }
     return (
-      contents
+      <Router>
+        {contents}
+        <nav>
+        <Link to='/Meals' >Find Meals</Link>
+        </nav>
+        <Route exact path = "/Meals" render={() => (
+          <Meals meals={this.state.meals} />
+        )} />
+      </Router>
+        
+     
 
     );
   }

@@ -5,6 +5,7 @@ const expressJWT =require('express-jwt');
 const helmet = require('helmet')
 const RateLimit = require('express-rate-limit')
 const app = express();
+const axios = require('axios')
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -34,8 +35,24 @@ db.on('error', (err) => {
     console.log(`Database error: \n ${err}`)
 })
 
+app.get('/', (req, res) => {
+    res.send('server working');
+})
 
-
+app.get('/meals', (req, res) => {
+    let config = {
+        headers: {
+            "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
+        }
+    }
+    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json', config).then( (response) => {
+    console.log('get data back from api: ', response.data);
+    res.json(response.data)
+  }).catch(err => {
+      console.log(err);
+      res.send('err')
+  })
+})
 
 
 
@@ -49,4 +66,4 @@ app.use('/api', expressJWT({secret: process.env.JWT_SECRET}), require('./routes/
 
 app.listen(process.env.PORT, () => {
     console.log(`Your listening to port ${process.env.PORT}...`)
-})
+})  
