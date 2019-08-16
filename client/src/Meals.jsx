@@ -12,27 +12,13 @@ class Meals extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            shelters: ''
+            shelters: '',
+            meals: []
         }
     }
 
 
-
-
-/*displayAllMeals(e) {
-    let config = {
-        headers: {
-            "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
-        }
-    }
-    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json', config).then( result => {
-    this.setState({
-    meals: result.data
-          })
-        })
-      }*/
-
-
+    
 
 
 
@@ -42,7 +28,7 @@ render() {
        <div className='App'>
         <h1>Here are all the meals in Seattle</h1>
         {this.props.meals && this.props.meals.map((meal, i) => (
-        <div className="meals">
+        <div className="themeals">
         <div> {meal.meal_served} </div>
         <div> {meal.day_time} </div>
         <div> {meal.location} </div>

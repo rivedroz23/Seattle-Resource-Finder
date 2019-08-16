@@ -22,6 +22,7 @@ class App extends React.Component {
       errorMessage: '',
       apiDate: null,
       meals: []
+     
     }
     this.checkForLocalToken = this.checkForLocalToken.bind(this);
     this.liftToken = this.liftToken.bind(this);
@@ -85,7 +86,7 @@ class App extends React.Component {
             "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
         }
     }
-    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json', config).then( result => {
+    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json?$limit=10', config).then( result => {
     this.setState({
     meals: result.data
           })
@@ -99,7 +100,7 @@ class App extends React.Component {
             "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
         }
     }
-    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json', config).then( result => {
+    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json?$limit=10', config).then( result => {
     this.setState({
     meals: result.data
           })
@@ -115,7 +116,7 @@ class App extends React.Component {
         <>
           <p>Hello, {user.name}</p>
           <p onClick={this.logout}>Logout</p>
-          <App2 meals={this.state.meals}/>
+        {/*<Meals meals={this.state.meals}/>*/}
         </>
       )
     } else {

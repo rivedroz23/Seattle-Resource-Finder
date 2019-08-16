@@ -13,25 +13,12 @@ class App2 extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            shelters: ''
+            shelters: '',
+            
         }
     }
 
 
-
-
-/*displayAllMeals(e) {
-    let config = {
-        headers: {
-            "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
-        }
-    }
-    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json', config).then( result => {
-    this.setState({
-    meals: result.data
-          })
-        })
-      }*/
 
 
 
@@ -39,10 +26,10 @@ class App2 extends React.Component {
 
 
 render() {
+    
     return (
-        <>
-            
-        </>
+       <>
+       </>
     );
 
 }
