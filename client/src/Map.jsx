@@ -27,8 +27,8 @@ class Map extends React.Component {
 	// }
 
 	render () {
-		let lng = this.state.lng ? this.state.lng : 73.9814
-		let lat = this.state.lat ? this.state.lat : 40.6711
+		let lng = this.state.lng ? this.state.lng : -122.350306
+		let lat = this.state.lat ? this.state.lat : 47.614193
 
 		const Map = new ReactMapboxGl({
 			accessToken: 'pk.eyJ1IjoibWNkdWRsZXk4NyIsImEiOiJjanhlejR5YWIwdWFwM25tcHNubDdpejIwIn0.n-RmlJrsycjQ76M82M_02Q',
@@ -42,7 +42,7 @@ class Map extends React.Component {
 			<>
 				<div className="mapboxBox">
 					<Map
-						center={[-73.9442, 40.6782]}
+						center={[-122.320108, 47.606811]}
 						style="mapbox://styles/mapbox/streets-v9"
 						containerStyle={{
 							height: '800px',

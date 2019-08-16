@@ -4,6 +4,7 @@ import Login from './Login'
 import Signup from './Signup'
 import App2 from './App2'
 import Meals from './Meals'
+import Map from './Map'
 import './App.css'
 import {
   BrowserRouter as Router,
@@ -117,6 +118,17 @@ class App extends React.Component {
           <p>Hello, {user.name}</p>
           <p onClick={this.logout}>Logout</p>
         {/*<Meals meals={this.state.meals}/>*/}
+        <Router>
+        <nav>
+        <Link to='/Meals' >Find Meals</Link>
+        </nav>
+        <Route exact path = "/Map" render={() => (
+          <Map />
+          )} />
+        <Route exact path = "/Meals" render={() => (
+          <Meals meals={this.state.meals} />
+        )} />
+      </Router>
         </>
       )
     } else {
@@ -130,16 +142,11 @@ class App extends React.Component {
       );
     }
     return (
-      <Router>
+      <div className="App">
         {contents}
-        <nav>
-        <Link to='/Meals' >Find Meals</Link>
-        </nav>
-        <Route exact path = "/Meals" render={() => (
-          <Meals meals={this.state.meals} />
-        )} />
-      </Router>
-        
+      </div>
+
+      
      
 
     );
