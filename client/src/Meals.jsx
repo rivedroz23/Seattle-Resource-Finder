@@ -18,14 +18,12 @@ class Meals extends React.Component {
     }
 
 
-    
-
 
 
 
 render() {
     return (
-       <div className='App'>
+       <div className='meals'>
         <h1>Here are all the meals in Seattle</h1>
         {this.props.meals && this.props.meals.map((meal, i) => (
         <div className="themeals">

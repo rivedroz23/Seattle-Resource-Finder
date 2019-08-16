@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: sandybrown;
+  background: cover;
 }
 
 .App-logo {
@@ -10,13 +12,17 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-style: solid;
+  background-color: #E63644;
+ /* font-family: 'Yellowtail', cursive;*/
+  font-family: 'Oswald', sans-serif;
+  color: whitesmoke;
+  font-size: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 200;
 }
 
 .App-link {
@@ -38,5 +44,13 @@ text-align: center;
 
 .meals {
 font-size: 15px;
-
 }
+
+.logout {
+  background-image: url(people.jpeg);
+  height: 100%;
+  width: 100%;
+} 
+
+
+

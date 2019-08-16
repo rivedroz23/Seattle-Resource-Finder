@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactMapboxGl, { Marker } from 'react-mapbox-gl';
+import ReactMapboxGl, { Marker, Popup } from 'react-mapbox-gl';
 import MapMarker from './Marker';
 import axios from 'axios';
 
@@ -9,22 +9,29 @@ class Map extends React.Component {
 		super(props);
 		this.state = {
 			lng: '',
-			lat: ''
+			lat: '',
+			popupInfo: null
 		}
-	}
+	};
 
-	// componentDidMount() {
-	// 	//get a location from props
-	// 	// axios post request to /geo/code
-	// 	axios.post('/geo/code',{
-	// 		location: this.props.match.params.location
-	// 	}).then( result => {
-	// 		this.setState({
-	// 			lng: result.data[0],
-	// 			lat: result.data[1]
-	// 		})
-	// 	})
-	// }
+	_renderPopup() {
+		const {popupInfo} = this.state;
+		
+		return (
+		  popupInfo && (
+			<Popup
+			  tipSize={5}
+			  anchor="top"
+			  longitude={popupInfo.lng}
+			  latitude={popupInfo.lat}
+			  closeOnClick={true}
+			  onClose={() => this.setState({popupInfo: null})}
+			>
+			  <Popup info={popupInfo} />
+			</Popup>
+		  )
+		);
+	  }
 
 	render () {
 		let lng = this.state.lng ? this.state.lng : -122.350306
@@ -39,25 +46,25 @@ class Map extends React.Component {
 	);
 
 	return (
-			<>
-				<div className="mapboxBox">
-					<Map
-						center={[-122.320108, 47.606811]}
-						style="mapbox://styles/mapbox/streets-v9"
-						containerStyle={{
-							height: '800px',
-							width: '800px'
-						}}>
-              {/* Make this render interview location */}
-						<Marker coordinates={[lng, lat]}
-							style={{backgroundColor: 'green', height: '25px', width: '25px', borderRadius: '50%'}}>
-						</Marker>
-						<MapMarker	/>
-					</Map>
-				</div>
-			</>
-		)
+	<>
+		<div className="mapboxBox">
+			<Map
+				center={[-122.320108, 47.606811]}
+				style="mapbox://styles/mapbox/streets-v9"
+				containerStyle={{
+					height: '800px',
+					width: '100%'
+				}}>
+		{/* Make this render interview location */}
+				<Marker coordinates={[lng, lat]}
+					style={{backgroundColor: 'green', height: '25px', width: '25px', borderRadius: '50%'}}>
+				</Marker>
+				<MapMarker	/>
+			</Map>
+		</div>
+	</>
+	)
 	}
-}	
+	}	
 
 export default Map;

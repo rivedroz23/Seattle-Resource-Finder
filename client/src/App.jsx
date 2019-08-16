@@ -2,9 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import Login from './Login'
 import Signup from './Signup'
-import App2 from './App2'
+import Shelters from './Shelters'
 import Meals from './Meals'
 import Map from './Map'
+import ShelterMap from './ShelterMap'
 import './App.css'
 import {
   BrowserRouter as Router,
@@ -114,14 +115,24 @@ class App extends React.Component {
     var contents = ''
     if (user) {
       contents = (
-        <>
+        <div className="Login">
           <p>Hello, {user.name}</p>
           <p onClick={this.logout}>Logout</p>
         {/*<Meals meals={this.state.meals}/>*/}
         <Router>
         <nav>
-        <Link to='/Meals' >Find Meals</Link>
+        <Link to='/'>Home</Link> |
+        <Link to='/Meals'>Find Meals</Link> |
+        <Link to='/Map'>View on Map</Link> |
+        <Link to='/Shelters'>Find Shelters</Link> |
+        <Link to='/ShelterMap'>View on map</Link>
         </nav>
+        <Route exact path = "/Shelters" render={() => (
+          <Shelters />
+        )} />
+        <Route exact path = "/ShelterMap" render={() => (
+          <ShelterMap />
+        )} />
         <Route exact path = "/Map" render={() => (
           <Map />
           )} />
@@ -129,16 +140,16 @@ class App extends React.Component {
           <Meals meals={this.state.meals} />
         )} />
       </Router>
-        </>
+        </div>
       )
     } else {
       contents = (
-        <>
+        <div className="logout">
           <p>PLease signup or login</p>
 
           <Login liftToken={this.liftToken} />
           <Signup liftToken={this.liftToken} />
-        </>
+        </div>
       );
     }
     return (

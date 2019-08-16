@@ -4,7 +4,7 @@ import MapMarker from './Marker';
 import axios from 'axios';
 
 
-class Map extends React.Component {
+class ShelterMap extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
@@ -27,10 +27,10 @@ class Map extends React.Component {
 	// }
 
 	render () {
-		let lng = this.state.lng ? this.state.lng : 73.9814
-		let lat = this.state.lat ? this.state.lat : 40.6711
+		let lng = this.state.lng ? this.state.lng : -122.353726
+		let lat = this.state.lat ? this.state.lat : 47.620923
 
-		const Map = new ReactMapboxGl({
+		const ShelterMap = new ReactMapboxGl({
 			accessToken: 'pk.eyJ1IjoibWNkdWRsZXk4NyIsImEiOiJjanhlejR5YWIwdWFwM25tcHNubDdpejIwIn0.n-RmlJrsycjQ76M82M_02Q',
 			container: 'map',
 			minZoom: 12,
@@ -40,24 +40,24 @@ class Map extends React.Component {
 
 	return (
 			<>
-				<div className="mapboxBox">
-					<Map
-						center={[-73.9442, 40.6782]}
+				<div className="sheltermap">
+					<ShelterMap
+						center={[-122.320108, 47.606811]}
 						style="mapbox://styles/mapbox/streets-v9"
 						containerStyle={{
 							height: '800px',
-							width: '800px'
+							width: '100%'
 						}}>
               {/* Make this render interview location */}
 						<Marker coordinates={[lng, lat]}
 							style={{backgroundColor: 'green', height: '25px', width: '25px', borderRadius: '50%'}}>
 						</Marker>
 						<MapMarker	/>
-					</Map>
+					</ShelterMap>
 				</div>
 			</>
 		)
 	}
 }	
 
-export default Map;
+export default ShelterMap;
