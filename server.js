@@ -6,6 +6,8 @@ const helmet = require('helmet')
 const RateLimit = require('express-rate-limit')
 const app = express();
 const axios = require('axios')
+const shelter = require('./models/shelter')
+const meal = require('./models/meal')
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -38,6 +40,52 @@ db.on('error', (err) => {
 app.get('/', (req, res) => {
     res.send('server working');
 })
+
+app.get('/shelters', (req,res) => {
+    Shelter.find({}, function(err,shelter){
+        if (err) res.json(err)
+        res.json(shelters)
+    })
+    
+  })
+
+  app.post('/shelters', (req,res) => {
+    shelter.create({
+      name: req.body.name,
+      address: req.body.address,
+      hours: req.body.hours
+  }, function(err, shelters) {
+        res.json(shelters)
+  })
+  })
+
+  app.put("/shelters/:id", (req,res) => {
+    shelter.findByIdAndUpdate(req.params.id, {
+        name: req.body.name,
+        address: req.body.address,
+        hours: req.body.hours
+    }, {
+        new: true
+    }, (err, shelters) =>  {
+        res.json(shelters);
+    });
+  });
+
+
+  app.delete("/shelters/:id", (req,res) => {
+    shelter.findByIdAndDelete(req.params.id, {
+        name: req.body.name,
+        address: req.body.address,
+        hours: req.body.hours
+    } (err, shelters) =>  {
+        res.json(shelters);     
+    });
+  });
+
+
+
+
+  
 
 app.get('/meals', (req, res) => {
     let config = {

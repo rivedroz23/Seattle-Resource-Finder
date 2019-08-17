@@ -22,7 +22,12 @@ const userSchema = new mongoose.Schema({
     },
 
     meal: {
-        type: String
+    type: String
+    
+    },
+
+    shelter: {
+    type: String
     }
 });
 
