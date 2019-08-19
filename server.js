@@ -60,6 +60,23 @@ app.get('/shelters', (req,res) => {
   })
   })
 
+  app.post('/users/:id/shelters', (req, res) => {
+    User.findById(req.params.id, function (err, user) {
+        // console.log("We got the user")
+        shelter.create({
+            name: req.body.name,
+            address: req.body.address,
+            hours: req.body.hours
+        }, function (err, shelter) {
+            user.shelter.push(shelter)
+            user.save(function (err, user) {
+                if (err) console.log(err)
+                res.json(user)
+            })
+        })
+    })
+})
+
 
   app.put("/shelters/:id", (req,res) => {
     shelter.findByIdAndUpdate(req.params.id, {

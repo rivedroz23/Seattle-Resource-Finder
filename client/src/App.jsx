@@ -117,9 +117,11 @@ class App extends React.Component {
     if (user) {
       contents = (
         <div className="Login">
+        <div className="greeting">
           <p>Hello, {user.name}</p>
           <p onClick={this.logout}>Logout</p>
         {/*<Meals meals={this.state.meals}/>*/}
+        </div>
         
         <Router>
           <div className="Link">
@@ -161,10 +163,19 @@ class App extends React.Component {
     }
     return (
       <>
+      <header className="header">
+        <div>Welcome to  Seattle Resource Finder</div>
+      </header>
+
       <div className="App">
         {contents}
       </div>
+
+      <div className="home">
+      </div>
+
       </>
+      
 
     );
     

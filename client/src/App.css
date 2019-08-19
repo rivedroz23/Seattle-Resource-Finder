@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   background: cover;
-  background-image: url(people.jpeg)
 }
 
 .App-logo {
@@ -52,7 +51,12 @@ font-size: 15px;
   min-width: 100vw;
 }
 
+.login {
+  float: left;
+}
+
 .logoutspacer {
+  position: fixed;
   height: 100vh;
 }
 
@@ -102,14 +106,13 @@ font-size: 15px;
   font-size: 1.2em;
 }
 
-.head {
+.header {
   border-style: solid;
-  background-color: #E63644;
+  background-color: firebrick;
  /* font-family: 'Yellowtail', cursive;*/
   font-family: 'Oswald', sans-serif;
   color: whitesmoke;
   font-size: 50px;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -118,12 +121,18 @@ font-size: 15px;
 
 .home {
   background-image: url('food.png');
+  background-size: cover;
 }
 
 .Link {
   background-color: white;
   color: white;
   border-style: solid;
+}
+
+.greeting {
+  margin-top: 20px;
+  float: left;
 }
 
 

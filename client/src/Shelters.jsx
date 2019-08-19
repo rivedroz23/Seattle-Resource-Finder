@@ -32,6 +32,7 @@ render() {
     return (
         <div className='shelterinfo'>
         <h1>Here are all the shelters in Seattle</h1>
+        
         <div>Shelter: Sacred Heart , Address: 232 Warren Ave N, Seattle, WA 98109, Hours: 24 hours</div>
         <div>Shelter: St Martin De Porres Shelter, Address: 1561 Alaskan Way S, Seattle, WA 98134, Hours: 6:30pm-7:30am</div>
         <div>Shelter: Nickelsville Tiny House Village, Address: 1419 22nd Ave, Seattle, WA 98122, Hours: 8am-9pm</div>
