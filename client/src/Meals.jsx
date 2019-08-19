@@ -26,7 +26,7 @@ render() {
        <div className='meals'>
         <h1>Here are all the meals in Seattle</h1>
         {this.props.meals && this.props.meals.map((meal, i) => (
-        <div className="themeals">
+        <div className="meals">
         <div> {meal.meal_served} </div>
         <div> {meal.day_time} </div>
         <div> {meal.location} </div>

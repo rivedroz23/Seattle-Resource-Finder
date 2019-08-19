@@ -6,13 +6,14 @@ import Shelters from './Shelters'
 import Meals from './Meals'
 import Map from './Map'
 import ShelterMap from './ShelterMap'
+import Home from './Home'
 import './App.css'
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom';
-
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 
 class App extends React.Component {
@@ -88,7 +89,7 @@ class App extends React.Component {
             "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
         }
     }
-    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json?$limit=10', config).then( result => {
+    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json?$limit=5', config).then( result => {
     this.setState({
     meals: result.data
           })
@@ -102,7 +103,7 @@ class App extends React.Component {
             "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
         }
     }
-    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json?$limit=10', config).then( result => {
+    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json?$limit=5', config).then( result => {
     this.setState({
     meals: result.data
           })
@@ -119,14 +120,20 @@ class App extends React.Component {
           <p>Hello, {user.name}</p>
           <p onClick={this.logout}>Logout</p>
         {/*<Meals meals={this.state.meals}/>*/}
+        
         <Router>
+          <div className="Link">
         <nav>
-        <Link to='/'>Home</Link> |
+        <Link to='/home'>Home</Link> |
         <Link to='/Meals'>Find Meals</Link> |
         <Link to='/Map'>View on Map</Link> |
         <Link to='/Shelters'>Find Shelters</Link> |
         <Link to='/ShelterMap'>View on map</Link>
         </nav>
+        </div>
+        <Route exact path = "/home" render={() => (
+          <Home />
+        )} />
         <Route exact path = "/Shelters" render={() => (
           <Shelters />
         )} />
@@ -140,29 +147,31 @@ class App extends React.Component {
           <Meals meals={this.state.meals} />
         )} />
       </Router>
-        </div>
+      </div>
+      
       )
     } else {
       contents = (
         <div className="logout">
-          <p>PLease signup or login</p>
+          <p>Please signup or login</p>
 
           <Login liftToken={this.liftToken} />
           <Signup liftToken={this.liftToken} />
         </div>
-      );
+      )
     }
     return (
+      <>
       <div className="App">
         {contents}
       </div>
-
-      
-     
+      </>
 
     );
+    
   }
 }
+
 
 
 

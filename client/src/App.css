@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: sandybrown;
   background: cover;
 }
 
@@ -23,6 +22,7 @@
   left: 0;
   width: 100vw;
   z-index: 200;
+  background-image: url(food.png);
 }
 
 .App-link {
@@ -40,6 +40,8 @@
 
 body {
 text-align: center;
+background-color: blanchedalmond;
+
 }
 
 .meals {
@@ -47,10 +49,67 @@ font-size: 15px;
 }
 
 .logout {
-  background-image: url(people.jpeg);
-  height: 100%;
-  width: 100%;
+  background-image: url(seattle4.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
 } 
+
+.signup {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.login {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  float: left;
+}
+
+.greeting {
+  float: left;
+}
+
+.shelterinfo {
+  font-size: 1.5em;
+}
+
+
+.meals {
+  font-size: 1.2em;
+}
+
+.head {
+  border-style: solid;
+  background-color: #E63644;
+ /* font-family: 'Yellowtail', cursive;*/
+  font-family: 'Oswald', sans-serif;
+  color: whitesmoke;
+  font-size: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 200;
+}
+
+.Home {
+  background-image: url('food.png');
+}
+
+.Link {
+  background-color: white;
+  color: white;
+  border-style: solid;
+}
+
+
+
 
 
 
