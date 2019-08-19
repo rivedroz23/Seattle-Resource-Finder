@@ -164,11 +164,11 @@ class App extends React.Component {
     return (
       <>
       <header className="header">
-        <div>Welcome to  Seattle Resource Finder</div>
+      <div>Welcome to  Seattle Resource Finder</div>
       </header>
 
       <div className="App">
-        {contents}
+        {contents} 
       </div>
 
       <div className="home">

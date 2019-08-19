@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMapboxGl, { Marker } from 'react-mapbox-gl';
+import ReactMapGL, {Popup} from 'react-map-gl';
 import MapMarker from './Marker';
 import axios from 'axios';
 
@@ -7,7 +8,9 @@ import axios from 'axios';
 class Map extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {coords: [{
+		this.state = {
+			showPopup: true,
+			coords: [{
 			lng: -122.350306,
 			lat: 47.614208
         },
@@ -27,7 +30,7 @@ class Map extends React.Component {
         {
 			lng: -122.353704,
 			lat: 47.620916
-        },
+		},
     ]}
 	}
     
@@ -45,18 +48,30 @@ class Map extends React.Component {
 	// }
 
 	render () {
+		const {showPopup} = this.state;
 		let lng = this.state.lng ? this.state.lng : -122.350306
 		let lat = this.state.lat ? this.state.lat : 47.614208
 		const Map = new ReactMapboxGl({
-			accessToken: 'pk.eyJ1IjoibWNkdWRsZXk4NyIsImEiOiJjanhlejR5YWIwdWFwM25tcHNubDdpejIwIn0.n-RmlJrsycjQ76M82M_02Q',
+			accessToken: 'pk.eyJ1Ijoicml2ZWRyb3oyMyIsImEiOiJjanpqMHlkcnEwMzNuM2hwNmtxYXhtZjQwIn0.tzvS_it-L8anCQ2qUvYLQA',
 			container: 'map',
 			minZoom: 12,
 			maxZoom: 16
-		},		
+		},
 	);
 
 	return (
 	<>	
+	 <ReactMapGL latitude={47.614208} longitude={-122.350306} zoom={8}>
+        {showPopup && <Popup
+          latitude={47.614208}
+          longitude={-122.350306}
+          closeButton={true}
+          closeOnClick={false}
+          onClose={() => this.setState({showPopup: false})}
+          anchor="top" >
+          <div>You are here</div>
+        </Popup>}
+      </ReactMapGL>
 		<div className="sheltermap">
 		<Map
 			center={[-122.320108, 47.606811]}
