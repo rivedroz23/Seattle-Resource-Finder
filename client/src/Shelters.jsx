@@ -14,7 +14,7 @@ class Shelters extends React.Component {
         super(props);
         this.state = {
             shelter: '',
-            Adress: '',
+            Address: '',
             hours: ''
             
         }

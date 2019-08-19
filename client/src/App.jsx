@@ -154,7 +154,6 @@ class App extends React.Component {
       contents = (
         <div className="logout">
           <p>Please signup or login</p>
-
           <Login liftToken={this.liftToken} />
           <Signup liftToken={this.liftToken} />
         </div>
