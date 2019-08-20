@@ -127,13 +127,32 @@ font-size: 15px;
 .Link {
   background-color: white;
   color: white;
-  border-style: solid;
+  
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color:firebrick;
+  border-right: 1px solid #ccc; 
 }
 
 .greeting {
   margin-top: 20px;
   float: left;
 }
+
+.nav {
+  width: 100%;
+ 
+  margin: 0 0 3em 0;
+  padding: 0;
+  list-style: none;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc; 
+  border-top: 1px solid #ccc; 
+} 
+
+
 
 
 

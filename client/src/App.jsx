@@ -26,7 +26,7 @@ class App extends React.Component {
       errorMessage: '',
       apiDate: null,
       meals: []
-     
+
     }
     this.checkForLocalToken = this.checkForLocalToken.bind(this);
     this.liftToken = this.liftToken.bind(this);
@@ -86,31 +86,31 @@ class App extends React.Component {
     this.checkForLocalToken();
     console.log("trying to display meals")
     let config = {
-        headers: {
-            "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
-        }
+      headers: {
+        "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
+      }
     }
-    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json?$limit=5', config).then( result => {
-    this.setState({
-    meals: result.data
-          })
-        })
+    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json?$limit=5', config).then(result => {
+      this.setState({
+        meals: result.data
+      })
+    })
   }
 
   displayAllMeals(e) {
     console.log("trying to display meals")
     let config = {
-        headers: {
-            "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
-        }
-    }
-    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json?$limit=5', config).then( result => {
-    this.setState({
-    meals: result.data
-          })
-        })
+      headers: {
+        "X-App-Token": "XUdLH5yC5LHLJ7qdLtMw62GVe"
       }
-    
+    }
+    axios.get('https://data.seattle.gov/resource/hmzu-x5ed.json?$limit=5', config).then(result => {
+      this.setState({
+        meals: result.data
+      })
+    })
+  }
+
 
   render() {
     var user = this.state.user
@@ -118,44 +118,44 @@ class App extends React.Component {
     if (user) {
       contents = (
         <div className="Login">
-        <div className="greeting">
-          <p>Hello, {user.name}</p>
-          <p onClick={this.logout}>Logout</p>
-        {/*<Meals meals={this.state.meals}/>*/}
-        </div>
-        
-        <Router>
-          <div className="Link">
-        <nav>
-        <Link to='/home'>Home</Link> |
+          <div className="greeting">
+            <p>Hello, {user.name}</p>
+            <p onClick={this.logout}>Logout</p>
+            {/*<Meals meals={this.state.meals}/>*/}
+          </div>
+
+          <Router>
+            <nav className="nav">
+              <div className="Link">
+                <Link to='/home'>Home</Link> |
         <Link to='/Meals'>Find Meals</Link> |
         <Link to='/Map'>View on Map</Link> |
         <Link to='/Shelters'>Find Shelters</Link> |
         <Link to='/ShelterMap'>View on map</Link> |
         <Link to='/Profile'>My Profile</Link>
-        </nav>
+              </div>
+            </nav>
+            <Route exact path="/home" render={() => (
+              <Home />
+            )} />
+            <Route exact path="/profile" render={() => (
+              <Profile />
+            )} />
+            <Route exact path="/Shelters" render={() => (
+              <Shelters />
+            )} />
+            <Route exact path="/ShelterMap" render={() => (
+              <ShelterMap />
+            )} />
+            <Route exact path="/Map" render={() => (
+              <Map />
+            )} />
+            <Route exact path="/Meals" render={() => (
+              <Meals meals={this.state.meals} />
+            )} />
+          </Router>
         </div>
-        <Route exact path = "/home" render={() => (
-          <Home />
-        )} />
-         <Route exact path = "/profile" render={() => (
-          <Profile />
-        )} />
-        <Route exact path = "/Shelters" render={() => (
-          <Shelters />
-        )} />
-        <Route exact path = "/ShelterMap" render={() => (
-          <ShelterMap />
-        )} />
-        <Route exact path = "/Map" render={() => (
-          <Map />
-          )} />
-        <Route exact path = "/Meals" render={() => (
-          <Meals meals={this.state.meals} />
-        )} />
-      </Router>
-      </div>
-      
+
       )
     } else {
       contents = (
@@ -168,22 +168,23 @@ class App extends React.Component {
     }
     return (
       <>
-      <header className="header">
-      <div>Welcome to  Seattle Resource Finder</div>
-      </header>
+        <header className="header">
+          <div>Welcome to  Seattle Resource Finder</div>
+        </header>
 
-      <div className="App">
-        {contents} 
-      </div>
 
-      <div className="home">
-      </div>
+        <div className="App">
+          {contents}
+        </div>
+
+        <div className="home">
+        </div>
 
       </>
-      
+
 
     );
-    
+
   }
 }
 
