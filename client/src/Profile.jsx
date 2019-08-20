@@ -71,7 +71,7 @@ class Profile extends React.Component {
                         <button>Update</button>
                     </form>
                 </Modal>
-
+            
                 <h1>Saved Shelters:</h1>
 
                 {shelters.map(s => {

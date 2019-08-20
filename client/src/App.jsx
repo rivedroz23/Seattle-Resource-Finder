@@ -164,6 +164,7 @@ class App extends React.Component {
           <Login liftToken={this.liftToken} />
           <Signup liftToken={this.liftToken} />
         </div>
+
       )
     }
     return (

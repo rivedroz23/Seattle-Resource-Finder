@@ -3,12 +3,6 @@
   background: cover;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
   height: 16vh;
   text-align: center;
@@ -33,15 +27,16 @@
   }
 }
 
-body {
+body{
 text-align: center;
-background-color: blanchedalmond;
-
+background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(food+shelter.png);
 }
 
-.meals {
-font-size: 15px;
+.profile {
+  font-size: 1.5em;
+  color: white;
 }
+
 
 .logout {
   background-image: url(Seattle1.jpg);
@@ -93,22 +88,20 @@ font-size: 15px;
   margin: 0 0 10px 0;
 }
 
-.greeting {
-  float: left;
-}
-
 .shelterinfo {
   font-size: 1.5em;
+  color: white;
 }
-
 
 .meals {
-  font-size: 1.2em;
-}
+  font-size: 1.5em;
+  color: white;
+  }
+
 
 .header {
   border-style: solid;
-  background-color: firebrick;
+  background-color: rgba(194, 194, 194, 0.604);
  /* font-family: 'Yellowtail', cursive;*/
   font-family: 'Oswald', sans-serif;
   color: whitesmoke;
@@ -127,7 +120,6 @@ font-size: 15px;
 .Link {
   background-color: white;
   color: white;
-  
   display: block;
   padding: 8px 15px;
   text-decoration: none;
@@ -139,11 +131,11 @@ font-size: 15px;
 .greeting {
   margin-top: 20px;
   float: left;
+  color: white;
 }
 
 .nav {
   width: 100%;
- 
   margin: 0 0 3em 0;
   padding: 0;
   list-style: none;
@@ -151,6 +143,16 @@ font-size: 15px;
   border-bottom: 1px solid #ccc; 
   border-top: 1px solid #ccc; 
 } 
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
 
 
