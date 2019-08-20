@@ -89,21 +89,22 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(foo
 }
 
 .shelterinfo {
+  font-family: 'Alice', serif;
   font-size: 1.5em;
   color: white;
 }
 
 .meals {
+  font-family: 'Alice', serif;
   font-size: 1.5em;
   color: white;
   }
 
 
 .header {
+  font-family: 'Alice', serif;
   border-style: solid;
-  background-color: rgba(194, 194, 194, 0.604);
- /* font-family: 'Yellowtail', cursive;*/
-  font-family: 'Oswald', sans-serif;
+  background-color: rgba(194, 194, 194, 0.700);
   color: whitesmoke;
   font-size: 50px;
   top: 0;
@@ -121,10 +122,9 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(foo
   background-color: white;
   color: white;
   display: block;
-  padding: 8px 15px;
   text-decoration: none;
   font-weight: bold;
-  color:firebrick;
+  color:black;
   border-right: 1px solid #ccc; 
 }
 
@@ -144,14 +144,14 @@ background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(foo
   border-top: 1px solid #ccc; 
 } 
 
-.button {
+button {
   border: none;
-  color: white;
-  padding: 15px 32px;
+  color: black;
+  background-color: rgba(194, 194, 194, 0.604);
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 
