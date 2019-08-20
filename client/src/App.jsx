@@ -7,6 +7,7 @@ import Meals from './Meals'
 import Map from './Map'
 import ShelterMap from './ShelterMap'
 import Home from './Home'
+import Profile from './Profile'
 import './App.css'
 import {
   BrowserRouter as Router,
@@ -130,11 +131,15 @@ class App extends React.Component {
         <Link to='/Meals'>Find Meals</Link> |
         <Link to='/Map'>View on Map</Link> |
         <Link to='/Shelters'>Find Shelters</Link> |
-        <Link to='/ShelterMap'>View on map</Link>
+        <Link to='/ShelterMap'>View on map</Link> |
+        <Link to='/Profile'>My Profile</Link>
         </nav>
         </div>
         <Route exact path = "/home" render={() => (
           <Home />
+        )} />
+         <Route exact path = "/profile" render={() => (
+          <Profile />
         )} />
         <Route exact path = "/Shelters" render={() => (
           <Shelters />

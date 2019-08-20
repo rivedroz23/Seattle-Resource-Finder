@@ -37,7 +37,9 @@ class Login extends React.Component {
                     message: res.data.message
                 })
             } else {
+                console.log('resss data', res.data);
                 localStorage.setItem('mernToken', res.data.token)
+                localStorage.setItem('userId', res.data.user._id)
                 this.props.liftToken(res.data)
             }
         }).catch(err => {

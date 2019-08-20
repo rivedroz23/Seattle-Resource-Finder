@@ -60,18 +60,7 @@ class Map extends React.Component {
 	);
 
 	return (
-	<>	
-	 <ReactMapGL latitude={47.614208} longitude={-122.350306} zoom={8}>
-        {showPopup && <Popup
-          latitude={47.614208}
-          longitude={-122.350306}
-          closeButton={true}
-          closeOnClick={false}
-          onClose={() => this.setState({showPopup: false})}
-          anchor="top" >
-          <div>You are here</div>
-        </Popup>}
-      </ReactMapGL>
+	<>
 		<div className="sheltermap">
 		<Map
 			center={[-122.320108, 47.606811]}
