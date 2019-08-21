@@ -1,3 +1,5 @@
+app.listen(process.env.PORT || 3000)
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';

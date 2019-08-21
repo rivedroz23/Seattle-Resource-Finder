@@ -22,5 +22,8 @@
     "react-bootstrap": "^1.0.0-beta.11",
     "react-map-gl": "^5.0.10",
     "react-mapbox-gl": "^4.6.0"
-  }
+  },
+  "engines": {
+    "node": "v12.3.1"
+}
 }
