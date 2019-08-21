@@ -2,7 +2,7 @@
 Made by River Droz
 
 # What is Seattle Resource Finder?
-Seattle Resource Finder is an application to help the homeless in the city of Seattle, Wa find resources such as meals and shelters. It includes a list of meals and shelters from around the city and shows them on a map. The application also lets the users save the information that they are interested in to their profile page.
+Seattle Resource Finder is an application to help the homeless in the city of Seattle find resources such as meals and shelters. It includes a list of meals and shelters from around the city and shows them on a map. The application also lets the users save the information that they are interested in to their profile page.
 
 # Layout
 ![alt Text](public/img/login.png)
