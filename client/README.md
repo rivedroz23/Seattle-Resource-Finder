@@ -5,11 +5,11 @@ Made by River Droz
 Seattle Resource Finder is an application to help the homeless in the city of Seattle, Wa find resources such as meals and shelters. It includes a list of meals and shelters from around the city and shows them on a map. The application also lets the users save the information that they are interested in to their profile page.
 
 # Layout
-![Login/Signup] (public/img/login.png)
-![alt Text] (public/img/mealsmap.png)
-![alt Text] (public/img/shelters.png)
-![alt Text] (public/img/saved.png)
-![alt Text] (public/img/Edit.png)
+![alt Text](public/img/login.png)
+![alt Text](public/img/mealsmap.png)
+![alt Text](public/img/shelters.png)
+![alt Text](public/img/saved.png)
+![alt Text](public/img/Edit.png)
 
 
 # Technologies used
