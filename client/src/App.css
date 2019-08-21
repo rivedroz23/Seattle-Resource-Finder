@@ -18,21 +18,13 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 body{
 text-align: center;
 background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url(food+shelter.png);
 }
 
 .profile {
+  font-family: 'Alice', serif;
   font-size: 1.5em;
   color: white;
 }

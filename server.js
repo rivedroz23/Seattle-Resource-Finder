@@ -92,6 +92,7 @@ app.put("/shelters/:id", (req, res) => {
         });
 });
 
+
 app.delete("/shelters/:id", (req, res) => {
     Shelter.findByIdAndRemove(req.params.id, (err, shelter) => {
         if (err) return res.status(500).send(err);
@@ -102,9 +103,6 @@ app.delete("/shelters/:id", (req, res) => {
         return res.status(200).send(response);
     });
 })
-
-
-
 
 
 
