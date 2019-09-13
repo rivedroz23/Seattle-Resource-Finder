@@ -27,8 +27,8 @@ const signupLimiter = new RateLimit({
     message: "Maximum accounts created please try again later"
 })
 
-mongoose.connect(process.env.MONGODB_URI || 'mongolab-globular-20380');
-//mongoose.connect('mongodb://localhost/homeless', { useNewUrlParser: true });
+//mongoose.connect(process.env.MONGODB_URI || 'mongolab-globular-20380');
+mongoose.connect('mongodb://localhost/homeless', { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.once('open', () => {
